@@ -1,0 +1,32 @@
+/* src/styles/print.css */
+@media print {
+  /* Cacher tous les éléments sauf le contenu à imprimer */
+  body * {
+    visibility: hidden;
+  }
+
+  .print-content,
+  .print-content * {
+    visibility: visible;
+  }
+
+  .print-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Styles spécifiques pour l'impression */
+  @page {
+    margin: 2cm;
+  }
+
+  .print-content {
+    font-size: 12pt;
+  }
+
+  .print-content table {
+    page-break-inside: avoid;
+  }
+}
